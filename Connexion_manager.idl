@@ -1,0 +1,13 @@
+//Connexion manager
+
+module Connexion_manager {
+	
+	interface Order {
+		void execute();
+	};
+
+	interface Connexion_client {
+		string list_modules();
+		void execute_order(in Order ord);
+	};
+};
