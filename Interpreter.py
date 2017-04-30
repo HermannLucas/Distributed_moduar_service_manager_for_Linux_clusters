@@ -27,7 +27,7 @@ class Prompter(Cmd):
             return
         self.ord_dir.set_cluster(args[0])
     
-    def do_delette_cluster(self, args):
+    def do_delete_cluster(self, args):
         "Delette the selected cluster (<clster_name>)"
         args = args.split()
         if len(args) != 1:
@@ -99,19 +99,3 @@ class Prompter(Cmd):
     
     def do_print(self, arg):
         print(self.server.clients)
-    
-    def do_send(self, args):
-        args = args.split()
-        if len(args) != 2:
-            print("***Invalid number of arguments")
-            return        
-        if args[0] in self.ord_dir.client_list:
-            self.ord_dir.send_to_client(args[0], args[1])
-    
-    def do_send_cluster(self, args):
-        args = args.split()
-        if len(args) != 2:
-            print("***Invalid number of arguments")
-            return
-        if args[0] in self.ord_dir.cluster_list:
-            self.ord_dir.send_to_cluster(args[0], args[1])
